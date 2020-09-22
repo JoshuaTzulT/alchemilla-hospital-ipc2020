@@ -1,44 +1,7 @@
-<style>
-input{
-	width: 200px;
-	padding: 12px 20px;
-	margin-bottom: 10px;
-}
-
-button {
-	background-color: #d1cfd0;
-	padding: 10px 20px;
-	width:200px;
-	height: 40px;
-}
-.container{
-	display: table;
-	background-color: #fff;
-	margin:30%;
-	padding: 20px 0px 20px 90px;
-}
-
-.row{
-	display: table-row;
-}
-.col{
-	display: table-row;
-}
-.bgr{
-	display: block;
-	position:fixed;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0,0,0,0.5);
-}
-.table{
-	display: table;
-}
-</style>
-
+<link rel="stylesheet" href ="CSS/estilo.css"/>
 <body>
 	<div class="bgr">
-		<form action="<%=request.getContextPath()%>/login">
+		<form action="<%=request.getContextPath()%>/login" method="POST">
 			<div class="container">
 				<div class="row">
 					<div class="col" style="width: 100px;">
@@ -61,8 +24,10 @@ button {
 				<div class="row">
 					<div class="col"></div>
 					<div class ="col">
-						<button type="submit">Login</button>
-					</div>
+						<p class="login_error"><%=request.getAttribute("err") == null ? "": request.getAttribute("err")%>
+                                                </p>   
+                                                <button type="submit">Ingresar</button>
+                                        </div>
 				</div>
 			</div>		
 		</form>		
